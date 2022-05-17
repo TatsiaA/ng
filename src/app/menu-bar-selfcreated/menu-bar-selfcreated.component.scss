@@ -1,0 +1,21 @@
+.menu-bar__created {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & input {
+    position: relative;
+    left: -90%;
+    top: 10px;
+
+  }
+
+  & label {
+    position: relative;
+    text-align: center;
+    left: 15%;
+    top: 6px;
+    text-transform: capitalize;
+  }
+
+}
