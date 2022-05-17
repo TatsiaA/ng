@@ -2,6 +2,10 @@
   position: relative;
   width: 200px;
   height: 40px;
+
+  & label {
+    font-weight: normal;
+  }
 }
 
 .menu-select {

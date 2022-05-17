@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-menu-bar-select',
   templateUrl: './menu-bar-select.component.html',

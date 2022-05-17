@@ -1,0 +1,9 @@
+$blue: #7db7f1;
+$border: $blue;
+
+.news-block {
+  margin: 10px auto;
+  width: 70%;
+  height: 70vh;
+  border: 1px solid $border;
+}
