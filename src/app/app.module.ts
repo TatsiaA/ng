@@ -13,6 +13,9 @@ import { MenuBarSelfcreatedComponent } from './menu-bar-selfcreated/menu-bar-sel
 import { MenuBarAddComponent } from './menu-bar-add/menu-bar-add.component';
 import { NewsBlockComponent } from './news-block/news-block.component';
 import { MoreComponent } from './more/more.component';
+import { NewsCardComponent } from './news-card/news-card.component';
+import { ManageBlockComponent } from './manage-block/manage-block.component';
+import { NewsLineComponent } from './news-line/news-line.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { MoreComponent } from './more/more.component';
     MenuBarSelfcreatedComponent,
     MenuBarAddComponent,
     NewsBlockComponent,
-    MoreComponent
+    MoreComponent,
+    NewsCardComponent,
+    ManageBlockComponent,
+    NewsLineComponent
   ],
   imports: [
     BrowserModule,

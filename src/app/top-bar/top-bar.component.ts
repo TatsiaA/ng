@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { sources, selectedSource } from '../menu-bar/menu-bar.component';
+import { sources } from '../sources';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.scss']
 })
 export class TopBarComponent implements OnInit {
-  // sources = sources;
+  sources = sources;
 
   constructor() { }
 
