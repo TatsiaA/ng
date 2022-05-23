@@ -1,9 +1,6 @@
 $blue: #7db7f1;
 $border: $blue;
 
-:host {
-  //height: 70vh;
-}
 
 .news-block {
   margin: 5px auto;
@@ -13,7 +10,3 @@ $border: $blue;
 
 }
 
-.news-block__line {
-  height: 100px;
-  color: red;
-}
