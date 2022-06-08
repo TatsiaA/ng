@@ -9,6 +9,10 @@ export class NewsLineComponent {
 
   constructor() { }
 
+  showTheArticle() {
+    
+  }
+
   editCardInfo() {
 
   }

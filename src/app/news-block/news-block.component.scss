@@ -1,6 +1,9 @@
 $blue: #7db7f1;
 $border: $blue;
 
+:host {
+  display: block;
+}
 
 .news-block {
   margin: 5px auto;
@@ -9,4 +12,3 @@ $border: $blue;
   overflow-y: auto;
 
 }
-

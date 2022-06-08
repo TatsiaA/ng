@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { sources } from '../sources';
 
@@ -7,12 +7,12 @@ import { sources } from '../sources';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss']
 })
-export class TopBarComponent implements OnInit {
+export class TopBarComponent {
   sources = sources;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  @Input() userName: string = "";
+
 
 }

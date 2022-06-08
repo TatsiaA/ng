@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.active {
+  color: red;
+  text-decoration: underline;
+}

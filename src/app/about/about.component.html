@@ -1,0 +1,70 @@
+<div class="about-page">
+  <h1>About the project</h1>
+
+  <section>
+    <h2>Homework for Part 1: <button (click)="toggle1()">Details</button></h2>
+    <ol [ngClass]="{invisible: visibility1}">
+      <li>Install @angular/cli</li>
+      <li>Generate Application by cli </li>
+      <li>Generate Component</li>
+      <li>Generate Service</li>
+      <li>Run Build</li>
+      <li>Run Start</li>
+      <li>Run tests</li>
+  </ol>
+  </section>
+  <section>
+    <h2>Homework for Part 2: <button (click)="toggle2()">Details</button></h2>
+    <ol [style.display]="visibility2?'none':'block'">
+      <li>Create components structure accordingly to mockup with minimal styles (width, height)</li>
+      <li>Use only stub data (without service)</li>
+      <li>Use Input and Output for providing details like clicked item or selected object and etc</li>
+      <li>Create at least two routes (for ex – home and details)</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Homework for Part 3:</h2>
+    <ol>
+      <li>Lifecycle Hooks – add usage of ngDestroy, ngOnInit. At least for one component log changes in console by ngOnChanges</li>
+      <li>Pipes –
+        <ul>
+          <li>Use at least two standard pipes (<a href="https://angular.io/guide/pipes">https://angular.io/guide/pipes</a>)</li>
+          <li>Create custom pipe (for example filter)</li>
+        </ul>
+      </li>
+      <li>Services – add at least one service in application</li>
+      <li>HTTP – use any public API call (whether, news and etc)</li>
+      <li>Use angular forms/reactive forms for adding new items from UI</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Homework for Part 4:</h2>
+    <ol>
+      <li>Add at least one component on UI dynamically. For example:
+        <ul>
+          <li>Editing panel for edit and read mode</li>
+          <li>Login/registration panel</li>
+          <li>Show/Clear any panel by button</li>
+        </ul>
+      </li>
+      <li>Move components on ChangeDecetionStategy.OnPush and MarkForCheck.</li>
+      <li>Use at least for one component Detach/Reattach from ChangeDetectorRef</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Homework for Part 5:</h2>
+    <ol>
+      <li>Integrate Angular CDK</li>
+      <li>Use at least 5 components from <a href="https://material.angular.io/cdk/categories">https://material.angular.io/cdk/categories</a> (table required*)</li>
+      <li>Integrate Angular Virtual Scroll.</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Homework for Part 6:</h2>
+    <ol>
+      <li>Integrate Angular Material</li>
+      <li>Use at least 5 components from <a href="https://material.angular.io/components/categories">https://material.angular.io/components/categories</a></li>
+      <li>Integrate table with Pagination, Sorting, Filter</li>
+    </ol>
+  </section>
+</div>
