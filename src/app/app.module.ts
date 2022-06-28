@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import {Routes, RouterModule} from '@angular/router';
 
@@ -17,10 +18,11 @@ import { NewsBlockComponent } from './news-block/news-block.component';
 import { MoreComponent } from './more/more.component';
 import { NewsCardComponent } from './news-card/news-card.component';
 import { ManageBlockComponent } from './manage-block/manage-block.component';
-import { NewsLineComponent } from './news-line/news-line.component';
 import { NewsPageComponent } from './news-page/news-page.component';
 import { AboutComponent } from './about/about.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import {LoginService} from "./services/login.service";
+import {NewsService} from "./services/news.service";
 
 const appRoutes: Routes =[
   { path: '', component: NewsPageComponent},
@@ -43,19 +45,22 @@ const appRoutes: Routes =[
     MoreComponent,
     NewsCardComponent,
     ManageBlockComponent,
-    NewsLineComponent,
     NewsPageComponent,
     AboutComponent,
-    LoginPageComponent
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     NgSelectModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    LoginService,
+    NewsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,26 @@
 <div class="news-block">
-  <app-news-line class="news-block__line"></app-news-line>
-  <app-news-line class="news-block__line"></app-news-line>
-  <app-news-line class="news-block__line"></app-news-line>
-  <app-news-line class="news-block__line"></app-news-line>
+  <div *ngFor="let d of newsDisplay" class="news-line" (click)="showTheArticle()">
+    <div class="news-line__img-block">
+      <img src="{{d.urlToImage}}" class="news-line__img" alt="NO PHOTO">
+    </div>
+    <div class="news-line__content-block">
+      <h3 class="news__title mt-2 mb-2 font-bold">{{d.title}}</h3>
+      <div class="news__content">
+        <p>{{d.description}}</p>
+        <a href="{{d.url}}" class="leading-10 text-sm">Read more</a>
+      </div>
+
+      <p class="news__date">{{d.publishedAt.slice(0, 10)}} {{d.publishedAt.slice(11, 16)}}</p>
+    </div>
+    <div class="news-line__manage-block">
+      <app-manage-block (edit)="editCardInfo()" (delete)="deleteCard()"></app-manage-block>
+
+    </div>
+
+  </div>
+
+  <!--  <app-news-line class="news-block__line"></app-news-line>-->
+<!--  <app-news-line class="news-block__line"></app-news-line>-->
+<!--  <app-news-line class="news-block__line"></app-news-line>-->
+<!--  <app-news-line class="news-block__line"></app-news-line>-->
 </div>

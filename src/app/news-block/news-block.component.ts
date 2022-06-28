@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../services/news.service';
 
 @Component({
   selector: 'app-news-block',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsBlockComponent implements OnInit {
 
-  constructor() { }
+  constructor(private services: NewsService) { }
+
+  // display data
+  newsDisplay: any = [];
 
   ngOnInit(): void {
+    this.services.getNewsData().subscribe((result) => {
+      this.newsDisplay = result.articles;
+      console.log(result);
+    })
+  }
+
+  showTheArticle() {
+
+  }
+
+  editCardInfo() {
+
+  }
+
+  deleteCard() {
+
   }
 
 }

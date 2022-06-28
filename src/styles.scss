@@ -1,7 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-// @import "~@ng-select/ng-select/themes/default.theme.css";
-// @import "~@ng-select/ng-select/themes/default.theme.css"; bf586602dfe64074a323e2b95fe2fe06
-// GET https://newsapi.org/v2/top-headlines/sources?apiKey=API_KEY
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Global Styles */
 
@@ -101,27 +100,4 @@ label {
 .button:disabled, button:disabled {
   opacity: 0.5;
   cursor: auto;
-}
-
-/* Fancy Button */
-
-.fancy-button {
-  background-color: white;
-  color: $link_bottom;
-}
-
-
-/* Checkout Cart, Shipping Prices */
-
-.cart-item, .shipping-item {
-  width: 100%;
-  min-width: 400px;
-  max-width: 450px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 16px 32px;
-  margin-bottom: 8px;
-  border-radius: 2px;
-  background-color: #EEEEEE;
 }

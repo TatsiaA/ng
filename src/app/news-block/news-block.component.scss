@@ -11,4 +11,53 @@ $border: $blue;
   height: 100%;
   overflow-y: auto;
 
+  :hover {
+    background-color: rgba(222, 240, 252, 0.2);
+  }
 }
+
+.news-line {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid $border;
+  overflow: auto;
+
+  &__img-block {
+    width: 30%;
+  }
+
+  &__content-block {
+    width: 65%;
+    padding: 0 20px;
+  }
+
+  &__manage-block {
+    width: 15%;
+    margin: auto;
+  }
+}
+
+.news-line__img {
+  display: block;
+  width: 100%;
+  font-size: 0;
+}
+
+.news__content {
+  min-height: 30px;
+  font-size: 10px;
+}
+
+.news__title {
+  font-size: 16px;
+}
+
+.news__date {
+  height: 8%;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
