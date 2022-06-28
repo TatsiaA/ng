@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,7 +8,13 @@ import { Component, Input } from '@angular/core';
 })
 export class LoginPageComponent {
 
-  constructor() { }
+  username: string = '0';
 
-  userName:string="Name";
+  constructor(
+    private readonly loginService: LoginService
+  ) { }
+
+  public setUsername(): void {
+    this.loginService.changeUsername(this.username);
+  }
 }
