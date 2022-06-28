@@ -10,7 +10,7 @@
         <a href="{{d.url}}" class="leading-10 text-sm">Read more</a>
       </div>
 
-      <p class="news__date">{{d.publishedAt.slice(0, 10)}} {{d.publishedAt.slice(11, 16)}}</p>
+      <p class="news__date">{{d.publishedAt | date:'medium'}} <span *ngIf="d.author">by {{d.author | titlecase}}</span> </p>
     </div>
     <div class="news-line__manage-block">
       <app-manage-block (edit)="editCardInfo()" (delete)="deleteCard()"></app-manage-block>
