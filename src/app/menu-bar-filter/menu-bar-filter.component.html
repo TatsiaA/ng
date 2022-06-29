@@ -1,5 +1,5 @@
 <div class="search">
-  <label for="site-search" class="button">Filter</label>
-  <input type="search" id="site-search" name="menu-search" placeholder="Type your text...">
-
+  <label for="site-search" class="button" (click)="filterPosts()">Filter</label>
+  <input id="site-search" name="menu-search" placeholder="Type your text..." type="search"
+         (keydown.enter)="filterPosts()" [(ngModel)]="filteredString">
 </div>

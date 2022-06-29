@@ -23,6 +23,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {LoginService} from "./services/login.service";
 import {NewsService} from "./services/news.service";
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes =[
   { path: '', component: NewsPageComponent},
@@ -48,6 +49,7 @@ const appRoutes: Routes =[
     NewsPageComponent,
     AboutComponent,
     LoginPageComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

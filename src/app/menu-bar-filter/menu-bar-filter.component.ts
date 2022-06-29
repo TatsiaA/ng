@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../services/news.service';
 
 @Component({
   selector: 'app-menu-bar-filter',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuBarFilterComponent implements OnInit {
 
-  constructor() { }
+  filteredString: string = '';
+
+  constructor(private services: NewsService) { }
 
   ngOnInit(): void {
+
+  }
+
+  public filterPosts(): void {
+    this.services.setFilterText(this.filteredString);
   }
 
 }

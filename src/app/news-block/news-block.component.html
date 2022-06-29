@@ -1,5 +1,5 @@
 <div class="news-block">
-  <div *ngFor="let d of newsDisplay" class="news-line" (click)="showTheArticle()">
+  <div *ngFor="let d of newsDisplay | filter:filteredString" class="news-line" (click)="showTheArticle()">
     <div class="news-line__img-block">
       <img src="{{d.urlToImage}}" class="news-line__img" alt="NO PHOTO">
     </div>
@@ -14,13 +14,8 @@
     </div>
     <div class="news-line__manage-block">
       <app-manage-block (edit)="editCardInfo()" (delete)="deleteCard()"></app-manage-block>
-
     </div>
 
   </div>
 
-  <!--  <app-news-line class="news-block__line"></app-news-line>-->
-<!--  <app-news-line class="news-block__line"></app-news-line>-->
-<!--  <app-news-line class="news-block__line"></app-news-line>-->
-<!--  <app-news-line class="news-block__line"></app-news-line>-->
 </div>

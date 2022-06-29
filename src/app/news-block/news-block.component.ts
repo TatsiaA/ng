@@ -8,6 +8,8 @@ import { NewsService } from '../services/news.service';
 })
 export class NewsBlockComponent implements OnInit {
 
+  filteredString: string = '';
+
   constructor(private services: NewsService) { }
 
   // display data
@@ -16,7 +18,13 @@ export class NewsBlockComponent implements OnInit {
   ngOnInit(): void {
     this.services.getNewsData().subscribe((result) => {
       this.newsDisplay = result.articles;
-      console.log(result);
+    })
+    this.services.filtredText$.subscribe((filter) => {
+      if (filter) {
+        this.filteredString = filter;
+      } else {
+        this.filteredString = '';
+      }
     })
   }
 

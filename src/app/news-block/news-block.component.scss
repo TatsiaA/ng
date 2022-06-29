@@ -10,10 +10,6 @@ $border: $blue;
   width: 80%;
   height: 100%;
   overflow-y: auto;
-
-  :hover {
-    background-color: rgba(222, 240, 252, 0.2);
-  }
 }
 
 .news-line {
@@ -61,3 +57,22 @@ $border: $blue;
   font-size: 10px;
 }
 
+.search {
+  position: relative;
+  width: 300px;
+  margin-bottom: 10px;
+
+  & label {
+    position: relative;
+    left: 200px;
+    height: 38px;
+    text-transform: capitalize;
+    font-weight: normal;
+  }
+
+  & input {
+    position: absolute;
+    left: 0;
+
+  }
+}
