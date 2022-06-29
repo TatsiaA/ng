@@ -1,7 +1,10 @@
 <div class="news-block">
   <div *ngFor="let d of newsDisplay | filter:filteredString" class="news-line" (click)="showTheArticle()">
     <div class="news-line__img-block">
-      <img src="{{d.urlToImage}}" class="news-line__img" alt="NO PHOTO">
+      <img *ngIf="d.urlToImage;else stub_photo" src="{{d.urlToImage}}" class="news-line__img" alt="PHOTO">
+      <ng-template #stub_photo>
+        <div class="absolute top-2/4 left-1/4">NO PHOTO AVAILABLE</div>
+      </ng-template>
     </div>
     <div class="news-line__content-block">
       <h3 class="news__title mt-2 mb-2 font-bold">{{d.title}}</h3>

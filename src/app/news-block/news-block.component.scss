@@ -21,6 +21,7 @@ $border: $blue;
   overflow: auto;
 
   &__img-block {
+    position: relative;
     width: 30%;
   }
 

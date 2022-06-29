@@ -21,7 +21,7 @@ export class NewsService {
   public filtredText$: Observable<string | null> = this.filtredText.asObservable();
 
   API_KEY = 'bf586602dfe64074a323e2b95fe2fe06';
-  private newsApiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`;
+  private newsApiUrl = `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${this.API_KEY}`;
 
   constructor(private http: HttpClient) {
   }
