@@ -5,7 +5,6 @@ import {NewsPageComponent} from "./news-page/news-page.component";
 const routes: Routes = [
   {path: '', component: NewsPageComponent},
 ];
-// const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

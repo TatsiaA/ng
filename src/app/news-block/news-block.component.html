@@ -10,7 +10,10 @@
       <h3 class="news__title mt-2 mb-2 font-bold">{{d.title}}</h3>
       <div class="news__content">
         <p>{{d.description}}</p>
-        <a [routerLink]="['/card']" class="leading-10 text-sm">Read more</a>
+        <div class="link-to-source">
+          <a href={{d.url}} class="leading-10 text-sm">Read more in {{d.source.name}}</a>
+        </div>
+
       </div>
 
       <p class="news__date">{{d.publishedAt | date:'medium'}} <span *ngIf="d.author">by {{d.author | titlecase}}</span> </p>
@@ -23,3 +26,4 @@
 
 </div>
 <app-more></app-more>
+<app-news-card [theNews]="theNews"></app-news-card>
