@@ -1,12 +1,18 @@
 <div class="news-card">
+  <div class="news-card__return button" (click)="returnToTheNews()">Return to the news</div>
   <div class="news-card__img-block">
-    <img src="" class="news-card__img">
+    <img *ngIf="theNews.urlToImage;else stub_photo" src="{{theNews.urlToImage}}" class="news-card__img" alt="PHOTO">
+      <ng-template #stub_photo>
+        <div class="absolute top-2/4 left-1/4">NO PHOTO AVAILABLE</div>
+      </ng-template>
   </div>
   <div class="news-card__content-block">
-    <h2 class="news__title">NewsTitle</h2>
-    <div class="news__content">News TextContent</div>
-    <p class="news__date">Date: dd/mm/yy: time</p>
-    <p class="news__author">Author</p>
+    <h2 class="news__title">{{theNews.title}}</h2>
+    <div class="news__source">{{theNews.source.name}}</div>
+    <div class="news__description">{{theNews.description}}</div>
+    <div class="news__content">{{theNews.content}} <a href={{theNews.url}}>Read more in {{theNews.source.name}}</a></div>
+    <p class="news__date">{{theNews.publishedAt | date:'medium'}}</p>
+    <p class="news__author">{{theNews.author}}</p>
   </div>
   <div class="news-card__manage-block">
     <app-manage-block></app-manage-block>

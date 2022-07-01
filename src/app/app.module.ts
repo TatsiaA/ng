@@ -27,7 +27,6 @@ import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes =[
   { path: '', component: NewsPageComponent},
-  { path: 'card', component: NewsCardComponent, pathMatch:'full'},
   { path: 'about', component: AboutComponent, pathMatch:'full'},
   { path: 'login', component: LoginPageComponent, pathMatch: 'full'},
   { path: '**', redirectTo: '/'}
