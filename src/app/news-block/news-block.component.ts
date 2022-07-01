@@ -14,10 +14,15 @@ export class NewsBlockComponent implements OnInit {
 
   // display data
   newsDisplay: any = [];
+  sources: any = [];
 
   ngOnInit(): void {
     this.services.getNewsData().subscribe((result) => {
       this.newsDisplay = result.articles;
+      this.newsDisplay.forEach((post: any) =>
+        this.sources.push(post.source.name));
+      this.sources = [...new Set(this.sources)]
+      console.log(this.sources);
     })
     this.services.filtredText$.subscribe((filter) => {
       if (filter) {
@@ -28,8 +33,9 @@ export class NewsBlockComponent implements OnInit {
     })
   }
 
-  showTheArticle() {
+  showTheArticle(el: any) {
 
+    console.log(el.title);
   }
 
   editCardInfo() {
@@ -37,7 +43,7 @@ export class NewsBlockComponent implements OnInit {
   }
 
   deleteCard() {
-
+    // (this.parentNode).parentNode.remove();
   }
 
 }
