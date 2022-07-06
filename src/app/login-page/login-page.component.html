@@ -1,33 +1,55 @@
-<!-- <app-top-bar [userName]="userName"></app-top-bar> -->
-
 <div class="login-page">
-  <form class="content">
+
+  <form class="content" [formGroup]="registerForm" (ngSubmit)="submitData()">
+
     <h2>Register Form</h2>
 
-    <div class="row">
+    <div class="row flex justify-center">
       <div class="mt-2 mb-2 mr-2 col">
-        <input type="text" class="form-control" placeholder="First Name">
+        <input type="text" formControlName="firstName" class="form-control" placeholder="First Name">
+        <!-- display errors start -->
+        <div *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)" class="h-0">
+          <span class="error" *ngIf="firstname.errors?.required">*First Name is required.</span>
+          <span class="error" *ngIf="firstname.errors?.pattern">*Enter only characters.</span>
+        </div>
+        <!-- display errors end -->
       </div>
 
       <div class="mt-2 mb-2 ml-2 col">
-        <input type="text" class="form-control" placeholder="Last Name">
+        <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name">
+        <!-- display errors start -->
+        <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)" class="h-0">
+          <span class="error" *ngIf="lastname.errors?.required">*Last Name is required.</span>
+          <span class="error" *ngIf="lastname.errors?.pattern">*Enter only characters.</span>
+        </div>
+        <!-- display errors end -->
       </div>
     </div>
 
-    <div class="mt-2 mb-2 row">
-      <input type="text" class="form-control" placeholder="Email">
+    <div class="mt-2 mb-4 row block">
+      <input type="text" formControlName="email" class="form-control" placeholder="Email">
+      <!-- display errors start -->
+      <div *ngIf="email.invalid && (email.touched || email.dirty)" class="h-0">
+        <span class="error" *ngIf="email.errors?.required">*Email is required.</span>
+        <span class="error" *ngIf="email.errors?.email">*Enter valid Email.</span>
+      </div>
+      <!-- display errors end -->
     </div>
 
-    <div class="mt-2 mb-2 row">
-      <input type="text" class="form-control" placeholder="Phone Number">
+    <div class="mt-2 mb-4 row block">
+      <input type="text" formControlName="phoneNumber" class="form-control" placeholder="Phone Number">
+      <!-- display errors start -->
+      <div *ngIf="phonenumber.invalid && (phonenumber.touched || phonenumber.dirty)" class="h-0">
+        <span class="error" *ngIf="phonenumber.errors?.required">*Phone number is required.</span>
+        <span class="error" *ngIf="phonenumber.errors?.pattern">*Enter only number.</span>
+      </div>
+      <!-- display errors end -->
     </div>
 
     <div class="mt-3 row">
-      <button class="button">Submit</button>
+      <button class="button" [disabled]="registerForm.invalid">Submit</button>
     </div>
 
-<!--    <label for="input-name" class="button" routerLink="/">Log in</label>-->
-<!--    <input type="text" [(ngModel)]="username" id="input-name" name="add-name" placeholder="Type your name...">-->
   </form>
 
 </div>

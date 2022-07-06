@@ -16,8 +16,6 @@ $blue: #7db7f1;
     padding: 2%;
 
     & .row {
-      display: flex;
-      justify-content: center;
       width: 100%;
 
       & .col {
@@ -29,6 +27,12 @@ $blue: #7db7f1;
       }
     }
   }
-
 }
 
+.error {
+  position: relative;
+  top: -20px;
+  height: 0;
+  color: red;
+  font-size: 11px;
+}

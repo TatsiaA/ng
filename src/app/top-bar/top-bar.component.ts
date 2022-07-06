@@ -13,28 +13,28 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
   private subs: Subscription | null = null;
 
-  username: string = '0';
+  inputLoginValue = (document.getElementById('user-login') as HTMLInputElement).value;
 
   sources = sources;
+
 
   constructor(
     private readonly loginService: LoginService
   ) { }
 
   ngOnInit(): void {
-    this.subs = this.loginService.username$.subscribe((username) => this.log(username));
+    // this.subs = this.loginService.username$.subscribe((username) => this.log(username));
+
   }
 
   ngOnDestroy(): void {
-    this.subs?.unsubscribe();
+    // this.subs?.unsubscribe();
   }
 
-  private log(data: string): void {
-    document.querySelector('.username')?.insertAdjacentText('afterbegin', data);
-    console.log(data);
+  logOut(): void {
+    (document.querySelector('.username') as HTMLSpanElement).textContent = '';
+    this.inputLoginValue = '';
+    (document.querySelector('.log-out') as HTMLButtonElement).textContent = 'Log In';
   }
-
-
-
-
+  
 }

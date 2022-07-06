@@ -1,14 +1,18 @@
-
-
 <div class="top-bar">
   <div class="top-bar__input">
     <label for="logo">Aggregator Logo</label>
     <input type="checkbox" name="add-logo" id="logo">
   </div>
-  <div>
-    <span class="username"> {{username}} </span>
-    <a [routerLink]="['/login']" class="button">Log in</a>
+  <div *ngIf="inputLoginValue; else elseBlock">
+    <span class="username"> {{inputLoginValue}} </span>
+    <button (click)="logOut()" class="button log-out">Log out</button>
   </div>
+  <ng-template #elseBlock>
+    <div>
+      <a [routerLink]="['/login']" class="button">Log in</a>
+    </div>
+  </ng-template>
+
 </div>
 <div class="top-title">
   <a [routerLink]="['/']">
