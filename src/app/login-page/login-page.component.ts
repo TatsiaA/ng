@@ -8,7 +8,7 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginPageComponent {
 
-  username: string = '0';
+  username: string = '';
 
   constructor(
     private readonly loginService: LoginService

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import {Routes, RouterModule} from '@angular/router';
@@ -24,6 +23,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {LoginService} from "./services/login.service";
 import {NewsService} from "./services/news.service";
 import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes =[
   { path: '', component: NewsPageComponent},
@@ -56,7 +56,8 @@ const appRoutes: Routes =[
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     LoginService,
