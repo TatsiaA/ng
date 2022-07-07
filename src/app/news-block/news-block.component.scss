@@ -19,12 +19,13 @@ $border: $blue;
   width: 100%;
   min-height: 200px;
   margin-bottom: 5px;
+  padding: 15px;
   border: 1px solid $border;
   overflow: auto;
 
   &:hover {
     position: relative;
-    transform: scale(1.06, 1.06);
+    transform: scale(1.05, 1.05);
     border: none;
     background-color: rgb(149, 213, 255, 0.3);
     transition: 0.5s ease;
