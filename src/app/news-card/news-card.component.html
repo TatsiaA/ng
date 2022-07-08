@@ -1,10 +1,7 @@
 <div class="news-card">
   <div class="news-card__return button" (click)="returnToTheNews()">Return to the news</div>
   <div class="news-card__img-block">
-    <img *ngIf="theNews.urlToImage;else stub_photo" src="{{theNews.urlToImage}}" class="news-card__img" alt="PHOTO">
-      <ng-template #stub_photo>
-        <div class="absolute top-2/4 left-1/4">NO PHOTO AVAILABLE</div>
-      </ng-template>
+    <img *ngIf="theNews.urlToImage" src="{{theNews.urlToImage}}" class="news-card__img" alt="PHOTO">
   </div>
   <div class="news-card__content-block">
     <h2 class="news__title">{{theNews.title}}</h2>

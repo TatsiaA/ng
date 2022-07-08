@@ -1,5 +1,5 @@
 <div class="menu-bar">
-  <app-menu-bar-select></app-menu-bar-select>
+  <app-menu-bar-select (newSource)="getNewSelect($event)" [selectedSource]="selectedItemValue"></app-menu-bar-select>
   <app-menu-bar-filter></app-menu-bar-filter>
   <app-menu-bar-selfcreated></app-menu-bar-selfcreated>
   <app-menu-bar-add></app-menu-bar-add>
