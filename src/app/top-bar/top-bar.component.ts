@@ -2,8 +2,6 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Subscription } from 'rxjs';
 
-import { sources } from '../sources';
-
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
@@ -15,7 +13,6 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
   inputLoginValue = (document.getElementById('user-login') as HTMLInputElement).value;
 
-  sources = sources;
 
 
   constructor(
@@ -36,5 +33,5 @@ export class TopBarComponent implements OnInit, OnDestroy {
     this.inputLoginValue = '';
     (document.querySelector('.log-out') as HTMLButtonElement).textContent = 'Log In';
   }
-  
+
 }

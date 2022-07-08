@@ -1,5 +1,5 @@
 <div class="news-block">
-  <div *ngFor="let d of newsDisplay | filter:filteredString" class="news-line" (click)="showTheArticle(d)">
+  <div *ngFor="let d of newsDisplay | filter:filteredString" class="news-line" (click)="showTheArticle(d)" [style.display]="visabilityFlag? 'flex' : 'none'">
     <div class="news-line__img-block">
       <img *ngIf="d.urlToImage;else stub_photo" src="{{d.urlToImage}}" class="news-line__img" alt="PHOTO">
       <ng-template #stub_photo>
@@ -11,7 +11,7 @@
       <div class="news__content">
         <p>{{d.description}}</p>
         <div class="link-to-source">
-          <a href={{d.url}} class="leading-10 text-sm">Read more in {{d.source.name}}</a>
+          <a href="{{d.url}}" class="leading-10 text-sm">Read more in {{d.source.name}}</a>
         </div>
 
       </div>
@@ -25,5 +25,5 @@
   </div>
 
 </div>
-<app-more></app-more>
-<app-news-card [theNews]="theNews"></app-news-card>
+<app-more [style.display]="visabilityFlag? 'block' : 'none'"></app-more>
+<app-news-card (changeVisibilityFlag)="changeVisibilityFlag()" [style.display]="visabilityFlag? 'none' : 'block'" [theNews]="theNews"></app-news-card>

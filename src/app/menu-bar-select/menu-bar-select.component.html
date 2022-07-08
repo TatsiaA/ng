@@ -1,8 +1,8 @@
 
 <div class="select-div__wrap">
-  <select [(ngModel)]="selectedSource" required class="menu-select">
-    <option [value]="0">All</option>
-    <option *ngFor="let source of sources" [value]="source">{{source.name}}</option>
+  <select [(ngModel)]="selectedSource" (change)="getValue(selectedSource)" required class="menu-select" id="select">
+    <option [value]="">All</option>
+    <option *ngFor="let source of sources" [value]="source">{{source}}</option>
   </select>
   <label class="menu-label">Select Source:</label>
 </div>

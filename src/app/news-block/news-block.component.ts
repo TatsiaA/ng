@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NewsService } from '../services/news.service';
 import { NewsText } from '../sources';
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-news-block',
   templateUrl: './news-block.component.html',
   styleUrls: ['./news-block.component.scss']
 })
-export class NewsBlockComponent implements OnInit {
+export class NewsBlockComponent implements OnInit, OnDestroy {
 
   filteredString: string = '';
+
+  visabilityFlag: boolean = true;
+
+  public destroyer$: Subject<void> = new Subject<void>();
 
   constructor(private services: NewsService) { }
 
@@ -20,7 +25,7 @@ export class NewsBlockComponent implements OnInit {
    description: 'description', url: '', urlToImage: '', publishedAt: ''};
 
   ngOnInit(): void {
-    this.services.getNewsData().subscribe((result) => {
+    this.services.getNewsData().pipe(takeUntil(this.destroyer$)).subscribe((result) => {
       this.newsDisplay = result.articles;
       this.newsDisplay.forEach((post: any) =>
         this.sources.push(post.source.name));
@@ -36,16 +41,13 @@ export class NewsBlockComponent implements OnInit {
     })
   }
 
+  changeVisibilityFlag() :void {
+    this.visabilityFlag = !this.visabilityFlag;
+  }
+
   showTheArticle(el: any) {
-    let menu = document.querySelector('app-menu-bar') as HTMLElement;
-    menu.style.display = 'none';
-    let block = document.querySelector('.news-block') as HTMLElement;
-    block.style.display = 'none';
-    let blockMore = document.querySelector('app-more') as HTMLElement;
-    blockMore.style.display = 'none';
+    this.changeVisibilityFlag();
     this.theNews = el;
-    let newsArticle = document.querySelector('app-news-card') as HTMLElement;
-    newsArticle.style.display = 'block';
   }
 
   editCardInfo() {
@@ -53,7 +55,12 @@ export class NewsBlockComponent implements OnInit {
   }
 
   deleteCard() {
-    // (this.parentNode).parentNode.remove();
+
+  }
+
+  ngOnDestroy() {
+    this.destroyer$.next();
+    this.destroyer$.complete();
   }
 
 }

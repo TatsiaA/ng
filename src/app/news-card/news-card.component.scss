@@ -16,6 +16,7 @@ $border: $blue;
   overflow: auto;
 
   &__img-block {
+    min-height: 30px;
     width: 100%;
     margin: auto;
   }
